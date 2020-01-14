@@ -1,11 +1,8 @@
 name: CI for release
 
 on:
-  push:
-    tags: 
-      - v1*
-    branches: 
-      - release
+  release:
+   types: [published]
 
 jobs:
   build:
@@ -15,4 +12,4 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
-      run: echo Hello, world release
+      run: echo Hello, world release ${GITHUB_SHA}
