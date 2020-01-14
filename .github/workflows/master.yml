@@ -2,6 +2,8 @@ name: CI for master
 
 on:
   push:
+    tags: 
+      - v1*
     branches: 
       - master
 
